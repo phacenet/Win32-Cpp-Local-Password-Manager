@@ -528,13 +528,17 @@ public:
 	T& back() { return this->at(m_CurrentSize - 1); }
 
 	T* data() { return m_Arr; }
+
+	const T* data() const { return m_Arr; }
 //================================================================================================================================//
 // 
 													//Capacity//
 //================================================================================================================================//
 	bool empty() const { return (m_CurrentSize == 0); }
 
-	std::size_t size() const { return m_CurrentSize; }
+	std::size_t size() { return m_CurrentSize; }
+
+	const std::size_t size() const { return m_CurrentSize; }
 
 	//theoretical limit to how many Ts a Vector can contain
 	std::size_t max_size() const { return std::numeric_limits<std::size_t>::max() / sizeof(T); }
